@@ -5,7 +5,9 @@ const router = Router();
 import auth from "./routes/auth.route";
 import user from "./routes/user.route";
 
-router.get("/", (_req, res) => res.sendFile("public/index.html"));
+router.get("/", (_req, res) =>
+  res.sendFile("public/index.html", { root: __dirname })
+);
 router.use("/auth", auth);
 router.use("/user", user);
 
