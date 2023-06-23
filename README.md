@@ -28,6 +28,14 @@ Start the server
   npm run dev
 ```
 
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -39,6 +47,8 @@ To run this project, you will need to add the following environment variables to
 `MONGODB_URI`
 
 ## API Reference
+
+[Postman Collection](https://github.com/lautivalentini/conexa-api/blob/main/conexa-api.postman_collection.json)
 
 #### List Users
 

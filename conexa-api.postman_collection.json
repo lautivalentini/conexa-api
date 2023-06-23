@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "0c0c4899-3c7b-4357-8e45-cb764a3a4170",
+    "name": "Conexa API - Lautaro Valentini",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Sign In",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"super&hard&\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api_url}}/auth/login",
+          "host": ["{{api_url}}"],
+          "path": ["auth", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sign Up",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"super&hard&\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api_url}}/auth/signup",
+          "host": ["{{api_url}}"],
+          "path": ["auth", "signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Not Found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api_url}}/notexist",
+          "host": ["{{api_url}}"],
+          "path": ["notexist"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Users",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk0YThmM2ZkNWMzMmJiM2JjNmM5MDYiLCJpYXQiOjE2ODc0NjQxODZ9.fGq8hmqkfg4ODbBVrtDFpqwoi5aV5_am7nzGvNtWp3I",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api_url}}/user/list?page=1&limit=10&email=&orderBy=asc",
+          "host": ["{{api_url}}"],
+          "path": ["user", "list"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "email",
+              "value": ""
+            },
+            {
+              "key": "orderBy",
+              "value": "asc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Index Page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api_url}}/",
+          "host": ["{{api_url}}"],
+          "path": [""]
+        }
+      },
+      "response": []
+    }
+  ]
+}
