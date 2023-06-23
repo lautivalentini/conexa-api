@@ -1,7 +1,7 @@
 import mongoose, { ConnectOptions } from "mongoose";
 import config from "./config";
 
-export const connectToMongoDB = async () => {
+export const startConnection = async () => {
   let connection;
 
   try {
@@ -9,10 +9,17 @@ export const connectToMongoDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     } as ConnectOptions);
-    console.log("Database is connected");
   } catch (err) {
     console.log(err);
   }
 
   return connection;
+};
+
+export const closeConnection = async () => {
+  try {
+    await mongoose.connection.close();
+  } catch (err) {
+    console.log(err);
+  }
 };

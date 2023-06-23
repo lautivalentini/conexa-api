@@ -9,7 +9,7 @@ interface IPayload {
 
 export const generateJwt = (payload: string | object | Buffer) => {
   try {
-    const token = jwt.sign(payload, config.JWT_SECRET);
+    const token = jwt.sign(payload, config.JWT_SECRET, { expiresIn: "24h" });
     return token;
   } catch (e) {
     return null;
